@@ -3,8 +3,11 @@ import pandas as pd
 import requests
 from bs4 import BeautifulSoup
 
+ASoC_URL = "https://help.hcltechsw.com/appscan/ASoC/src_language_support.html"
+Source_URL = "https://help.hcltechsw.com/appscan/Source/10.0.5/topics/system_requirements_win.html"
 
-def getASoCLangs():
+
+def getASoCLangs(url):
     """Scraps the ASoC online documentation to produce a list of supported languages.
 
     Args:
@@ -15,7 +18,6 @@ def getASoCLangs():
     """
 
     # Define the AppScan Source system requirements url
-    url = "https://help.hcltechsw.com/appscan/ASoC/src_language_support.html"
     # Define the table on the page where the languages are specified (zero based)
     supportedLanguagesTable = 0
 
@@ -35,7 +37,7 @@ def getASoCLangs():
     return langs
 
 
-def getSourceLangs():
+def getSourceLangs(url):
     """Scraps the AppScan Source online documentation to produce a list of supported languages.
 
     Args:
@@ -46,7 +48,6 @@ def getSourceLangs():
     """
 
     # Define the AppScan Source system requirements url
-    url = "https://help.hcltechsw.com/appscan/Source/10.0.4/topics/system_requirements_win.html"
     # Define the table on the page where the languages are specified (zero based)
     supportedLanguagesTable = 4
 
@@ -127,5 +128,5 @@ if __name__ == "__main__":
         fmt = "list"
 
     # Print langs to the console
-    printLangs(getSourceLangs(), fmt)
-    printLangs(getASoCLangs(), fmt)
+    printLangs(getSourceLangs(Source_URL), fmt)
+    printLangs(getASoCLangs(ASoC_URL), fmt)
