@@ -4,16 +4,23 @@ AppScanLangs is a Python program that scrapes the supported list of languages su
 
 ## Installation
 
-Install packages with pip: -r requirements.txt
+* Clone this GitHub repository: git clone `https://github.com/gledonne/appscanlangs.git`
 
-Run appscanlangs.py
+* Create a virtual environment: python -m venv *myvenv*
+* Activate the virtual environment: \myvenv\Scripts>activate.bat or  VSCode
+* Install required packages: pip install -r requirements.txt
+* Upgrade pip (Optional): python.exe -m pip install --upgrade pip
 
 
 ## Usage
 
 usage: python appscanlangs.py -f/--format <'list' (default) or 'line'>
 
-Example: python appscanlangs.py > listing.txt
+Examples: 
+* python appscanlangs.py
+* python appscanlangs.py -f list
+* python appscanlangs.py > listing.txt
+* python appscanlangs.py -f list > listing.txt
 
 
 ## License
